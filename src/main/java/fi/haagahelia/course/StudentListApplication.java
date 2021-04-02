@@ -12,7 +12,7 @@ import fi.haagahelia.course.domain.Department;
 import fi.haagahelia.course.domain.DepartmentRepository;
 import fi.haagahelia.course.domain.Student;
 import fi.haagahelia.course.domain.StudentRepository;
-import fi.haagahelia.course.domain.User;
+import fi.haagahelia.course.domain.Usero;
 import fi.haagahelia.course.domain.UserRepository;
 
 @SpringBootApplication
@@ -35,10 +35,10 @@ public class StudentListApplication {
 			srepository.save(new Student("Katy", "Kateson", "kate@kate.com", drepository.findByName("Business").get(0)));	
 			
 			// Create users: admin/admin user/user
-			User user1 = new User("user", "$2a$06$3jYRJrg0ghaaypjZ/.g4SethoeA51ph3UD4kZi9oPkeMTpjKU5uo6", "USER");
-			User user2 = new User("admin", "$2a$10$0MMwY.IQqpsVc1jC8u7IJ.2rT8b0Cd3b3sfIBGV2zfgnPGtT4r0.C", "ADMIN");
-			urepository.save(user1);
-			urepository.save(user2);
+			Usero usero1 = new Usero("user", "$2a$06$3jYRJrg0ghaaypjZ/.g4SethoeA51ph3UD4kZi9oPkeMTpjKU5uo6", "USER");
+			Usero usero2 = new Usero("admin", "$2a$10$0MMwY.IQqpsVc1jC8u7IJ.2rT8b0Cd3b3sfIBGV2zfgnPGtT4r0.C", "ADMIN");
+			urepository.save(usero1);
+			urepository.save(usero2);
 			
 			log.info("fetch all students");
 			for (Student student : srepository.findAll()) {
